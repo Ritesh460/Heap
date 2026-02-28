@@ -1,7 +1,7 @@
 #include "heap.h"
 #include <iostream>
 using namespace std;
-
+//initial
 Heap::Heap() {
   size = 0;
 }
@@ -55,7 +55,7 @@ void Heap::removeMax() {
     cout << "Heap is empty";
     return;
   }
-  cout << heap[1];
+  cout << heap[1] << " ";
   heap[1] = heap[size--];
   heapifyDown(1);
 }
@@ -67,7 +67,8 @@ void Heap::removeAll() {
   cout << endl;
 }
 // Sideways tree display
-void MaxHeap::printTree(int index, int depth) {
+void Heap::printTree(int index, int depth) {
+
    if (index > size) {
       return;
    }
@@ -80,12 +81,12 @@ void MaxHeap::printTree(int index, int depth) {
    printTree(index * 2, depth + 1);
 }
 
-void MaxHeap::displayTree() {
-    if (size == 0) {
-        cout << "Heap is empty.\n";
-        return;
-    }
-    printTree(1, 0);
+void Heap::displayTree() {
+  if (size == 0) {
+    cout << "Heap is empty.\n";
+    return;
+  }
+  printTree(1, 0);
 }
 
 
